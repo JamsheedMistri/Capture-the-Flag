@@ -137,6 +137,12 @@ public class CaptureTheFlag {
 						}
 						if (t != o && t.checkCollision(o) == 2) {
 							t.follow(100, Window.height() / 2);
+							if (t.getNumber() == 1) {
+								redkills++;
+							}
+							else if (t.getNumber() == 2) {
+								bluekills++;
+							}
 						}
 					}
 
@@ -188,7 +194,7 @@ public class CaptureTheFlag {
 		
 		Window.out.color("white");
 		Window.out.font("serif", 30);
-		Window.out.print("Time: " + time / 20, 25, 50);
+		Window.out.print("Time (frames): " + time, 25, 50);
 		
 		Window.out.print("Blue Kills: " + bluekills, 25, Window.height() - 50);
 		Window.out.print("Red Kills: " + redkills, Window.width() - 200, Window.height() - 50);
